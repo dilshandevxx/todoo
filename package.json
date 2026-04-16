@@ -2,7 +2,15 @@
   "name": "todoo-root",
   "version": "1.0.0",
   "scripts": {
-    "start": "npm start --prefix server",
-    "build": "echo 'Building backend...'"
+    "start": "node server/index.js",
+    "build": "echo 'Installing dependencies...'"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.0.0",
+    "express": "^5.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.0.0"
   }
 }
