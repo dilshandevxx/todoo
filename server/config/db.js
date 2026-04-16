@@ -16,7 +16,8 @@ const pool = mysql.createPool({
 });
 
 // Test the connection
-pool.getConnection()
+const promisePool = pool.promise();
+promisePool.getConnection()
     .then(connection => {
         console.log('✅ Connected to Aiven MySQL database successfully!');
         connection.release();
@@ -25,4 +26,4 @@ pool.getConnection()
         console.error('❌ Database connection failed:', err.message);
     });
 
-module.exports = pool.promise();
+module.exports = promisePool;
