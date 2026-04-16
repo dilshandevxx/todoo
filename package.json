@@ -1,0 +1,8 @@
+{
+  "name": "todoo-root",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm start --prefix server",
+    "build": "echo 'Building backend...'"
+  }
+}
