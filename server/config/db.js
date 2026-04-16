@@ -15,4 +15,14 @@ const pool = mysql.createPool({
     }
 });
 
+// Test the connection
+pool.getConnection()
+    .then(connection => {
+        console.log('✅ Connected to Aiven MySQL database successfully!');
+        connection.release();
+    })
+    .catch(err => {
+        console.error('❌ Database connection failed:', err.message);
+    });
+
 module.exports = pool.promise();
