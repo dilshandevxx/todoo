@@ -24,8 +24,14 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/todos', todoRoutes);
 
+console.log('--- Environment Check ---');
+console.log('DB_HOST:', process.env.DB_HOST ? '✅ Found' : '❌ Missing');
+console.log('DB_PORT:', process.env.DB_PORT || 'Defaulting to 3306');
+console.log('PORT Variable:', process.env.PORT);
+console.log('-------------------------');
+
 app.get('/', (req, res) => {
-    res.send('Task Manager API is running...');
+    res.status(200).send('API is healthy and running!');
 });
 
 app.listen(PORT, '0.0.0.0', () => {
