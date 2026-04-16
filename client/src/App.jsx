@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'r
 import axios from 'axios';
 import './index.css';
 
-const API_URL = 'http://localhost:5001/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://todoo-production-b633.up.railway.app/api';
 
 const Login = ({ setToken }) => {
   const [username, setUsername] = useState('');
